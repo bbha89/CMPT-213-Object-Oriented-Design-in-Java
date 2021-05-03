@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--Brandon Ha, 301333647, bbha@sfu.ca-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Oops! Game session not found.</h1>
+        <form th:action="@{/welcome}" method="get">
+        <a href="/welcome">Return to welcome page</a>
+        </form>
+    </div>
+</body>
+</html>

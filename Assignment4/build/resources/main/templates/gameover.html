@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--Brandon Ha, 301333647, bbha@sfu.ca-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <div align="center">
+        <h1 align="center">Game Over</h1>
+        <img th:src="@{/images/8.jpg}" />
+        <p>You
+            <span th:text="${condition.status}"></span> the game!
+            <span th:text="${condition.word}"></span> was your final word.
+        </p>
+
+        <form th:action="@{/welcome}" method="get">
+            <a href="/welcome">Back to welcome page</a>
+        </form>
+    </div>
+</body>
+</html>

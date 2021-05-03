@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--Brandon Ha, 301333647, bbha@sfu.ca-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Welcome to The Hangman Game!</h1>
+            <img th:src="@{/images/8.jpg}" />
+        <p>Welcome to my online html-based Hangman game using Spring Boot and Thymeleaf.</p>
+        <p>Author: Brandon Ha 301333647 bbha@sfu.ca</p>
+        <p>Rules: Players guess a letter and continues to guess until they have guessed the word or reached 8 incorrect guesses.</p>
+        <p>Players can guess the same letter and if the letter is part of the word, it will be counted as a guess but not an incorrect guess.</p>
+
+        <form th:action="@{/game}" th:object="${checkIfPressed}" method="post">
+            <input type ="hidden" id="pressed" value = "true" name = "pressed">
+            <button type = "submit">Start a new game!</button>
+        </form>
+    </div>
+</body>
+</html>

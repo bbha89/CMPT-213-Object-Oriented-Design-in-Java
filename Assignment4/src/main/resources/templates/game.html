@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--Brandon Ha, 301333647, bbha@sfu.ca-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <div align="center">
+        <h1> Game Session: <span th:text="${game.id}"></span></h1>
+        <th:block th:switch="${game.imageNumber}">
+            <div th:case=0>
+                <img th:src="@{/images/0.jpg}" />
+            </div>
+            <div th:case=1>
+                <img th:src="@{/images/1.jpg}" />
+            </div>
+            <div th:case=2>
+                <img th:src="@{/images/2.jpg}" />
+            </div>
+            <div th:case=3>
+                <img th:src="@{/images/3.jpg}" />
+            </div>
+            <div th:case=4>
+                <img th:src="@{/images/4.jpg}" />
+            </div>
+            <div th:case=5>
+                <img th:src="@{/images/5.jpg}" />
+            </div>
+            <div th:case=6>
+                <img th:src="@{/images/6.jpg}" />
+            </div>
+            <div th:case=7>
+                <img th:src="@{/images/7.jpg}" />
+            </div>
+        </th:block>
+
+        <p>Status: <span th:text="${game.status}"></span></p>
+        <p>Progress:
+            <tr th:each="wordSpaces: ${game.wordSpace}">
+                <td th:text="${wordSpaces}" />
+            </tr>
+        </p>
+        <p>You have made
+            <span th:text="${game.numOfGuesses}"></span> guesses, out of which
+            <span th:text="${game.incorrectGuesses}"></span> are incorrect.
+        </p>
+
+        <form th:action="@{/game}" method="post">
+            <input type="text" th:field="*{game.userInput}">
+            <button type = "submit">Make a guess!</button>
+        </form>
+        &nbsp;
+        <form th:action="@{/welcome}" method="get">
+            <a href="/welcome">Back to welcome page</a>
+        </form>
+    </div>
+</body>
+</html>

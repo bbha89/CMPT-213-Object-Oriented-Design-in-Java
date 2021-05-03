@@ -1,0 +1,15 @@
+An interesting action that the game supports is collision detection. 
+I had to do comparisons in two phases, one for the hero and when for the monsters.
+As the hero moves before the monsters after receiving an input, I had to check if the next
+hero position is occupied by the following: empty space, wall, power or enemy. Depending on
+what value the next cell is, my implementation would handle it appropriately. For example, 
+if the next position is occupied by a monster, then use the powers you have available to 
+eliminate as many monsters as you can. If you don't have enough powers, then the hero does and
+the next hero position would be replaced with an X. The next part of the collision detection is
+when the monsters move which does collisions just like the hero and can have many monsters
+occupy the same cell. Another interesting action of the game is hiding and revealing the maze.
+At the start of the game, all the maze cells are not visible to the user besides the hero and 
+its surroundings, monsters, outer walls and power. The game supports revealing the whole map.
+At first, the cell values of empty or wall are both replaced with temporary empty and wall values.
+but through user input typing "m" they can reveal the whole map which results in all the inner 
+cells of temporary empty and wall values to be replaced with the original empty and wall values.
